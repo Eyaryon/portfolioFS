@@ -1,0 +1,63 @@
+.grid-container{
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: minmax(100px, 150px) 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    background-color: beige;
+    margin: 0;
+    font-family: sans-serif;
+}
+.padding{
+    padding: 1.5rem;
+}
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: rgb(27, 60, 88);
+    color: white;
+    grid-column: span 4;
+}
+nav{
+    background-color: rgb(27, 60, 88);
+}
+aside{
+    background-color: lightseagreen;
+    max-width: 200px;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(10px, 25px));
+    grid-gap: 1rem;
+}
+main{
+    background-color: brown;
+    grid-column: span 3;
+    
+}
+footer{
+    background-color: darkolivegreen;
+    grid-column: span 4;
+    
+}
+div.navigator{
+    grid-column: span 3;
+    display:grid;
+}
+h2.siteName{
+    margin: 0;
+    padding: 0;
+}
+a.homeLink{
+    text-decoration: none;
+    color: white;
+}
+div.siteName{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button.sidebar{
+    min-height: 10px;
+    max-height: 25px;
+    min-width: auto;
+    background: transparent;
+    border: none;
+}
