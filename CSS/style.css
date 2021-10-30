@@ -1,6 +1,54 @@
-/*Nav-Link-Style
+/*Nav-Link-Style*/
 
-a {
+*{
+    box-sizing: border-box;
+}
+.grid-container{
+    background-color: beige;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 5% 1fr 1fr 1fr 1fr;
+}
+header {
+    background-color: #152a3f;
+    display: grid;
+    grid-template-columns: 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33%;
+    align-items: center;
+    grid-column: 1/4;
+    grid-row: 1;
+}
+nav.container{
+    display: grid;
+    background-color: #152a3f;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 2px;
+    align-content: center;
+    justify-content: center;
+}
+div.navContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+div.navButton{
+    border-radius: 5px;
+    border: 3px outset black;
+    background-color: aliceblue;
+}
+div.navButton:hover{
+    border-style: inset;
+}
+a.navButton {
     text-decoration: none;
 }
+a.navButton:hover{
+    color: darkred;
+}
+h1.head{
+    background-color: transparent;
+    color: #FFFFFFFF;
+}
+div.contentContainer{
+    position: absolute;
 
+}
