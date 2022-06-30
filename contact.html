@@ -4,26 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url(CSS/stylesheet.css);
-    </style>
-    <title>Kontakt</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="font" href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <title>Bithday-Calendar Kontakt</title>
 </head>
-<body class="grid-container">
-  <header>
-    <div class="siteName"><a class="homeLink" href="index.html"><h2>Cat Diary</h2></a></div>
-    <div class="navigator">
-      <nav>&lt;navigator&gt;</nav>
+<body class="body__main">
+  <header class="headerContainer">
+    <div>
+        <a class="logo__link" href="home.html">
+            <h2>Birthday Calendar</h2>
+        </a>
     </div>
+    <nav class="navContainer">
+        <a class="nav__link" href="contact.html">Kontakt</a>
+    </nav>
   </header>
-  <aside class="padding">
-    Sidebar
-    <button class="sidebar">Kontakt</button>
-    <button class="sidebar">Rechtlicher Hinweis</button>
-    <button class="sidebar">AGB</button>
-    <button class="sidebar">FAQ</button>
+  <aside class="asideContainer">
+    <ul class="aside__sidebar" >
+      <li class="aside__list">
+        <a class="aside__link" href="#ID_provider">Anbieter</a>
+      </li>
+      <li class="aside__list">
+        <a class="aside__link" href="#ID_contact">Kontakt</a>
+      </li>
+      <li class="aside__listItem">
+        <a class="aside__link" href="#ID_legalNotice" style="text-align: left;">Rechtlicher Hinweis</a>
+      </li>
+      <li class="aside__listItem">
+        <a class="aside__link" href="#ID_agb">AGB</a>
+      </li>
+      <li class="aside__listItem">
+        <a class="aside__link" href="#ID_faq">FAQ</a>
+      </li>
+    </ul>
   </aside>
-  <main class="padding">&lt;main&gt;</main>
-  <footer class="padding">&lt;footer&gt;</footer>
+  <main class="mainContainer" style="display: block;">
+    <div class="test">  
+      <article id="ID_provider">
+        <h2>Anbieter</h2>
+        Marc Nauroth<br>
+        Musterstraße 12<br>
+        12345 Musterstadt
+      </article>
+      <article id="ID_contact">
+        <h2>Kontakt</h2>
+        Telefon: 01234/56789<br>
+        E-Mail: muster@mail.com<br>
+        Website: www.birthday-calendar.de
+      </article>
+      <br>
+      <article id="#ID_legalNotice">
+        <h2>Rechtlicher Hinweis</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </article>
+      <br>
+      <article id="#ID_agb">
+        <h2>AGB</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </article>
+      <br>
+      <article id="ID_faq">
+        <h2>FAQ</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </article>
+    </div>
+  </main>
+  <footer class="footerContainer">
+    &copy;Nauroth, Marc 2021
+  </footer>
 </body>
 </html>

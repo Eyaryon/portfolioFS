@@ -4,27 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url(CSS/stylesheet.css);
-    </style>
-    <title>Homepage</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="font" href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <title>Birthday-Calendar Login</title>
 </head>
-<body class="grid-container">
-    <header class="padding">
-        <div><h2>Cat Diary</h2></div>
-        <div class="navigator">
-            <nav class="container">
-                <div class="navButton">
-                    <a class="navButton" href="index.html">Home</a>
-                </div>
-                <div class="navButton">
-                    <a class="navButton" href="contact.html">Kontakt</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <aside class="padding">&lt;aside&gt;</aside>
-    <main class="padding">&lt;main&gt;</main>
-    <footer class="padding">&lt;footer&gt;</footer>
+<body class="body__login">
+    <div class="loginContainer">
+        <form class="form" id="login">
+            <h2 class="form__title">Login</h2>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Username" required id="username">
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" placeholder="Password" required id="password">
+            </div>
+            <button class="form__button" type="button" id="loginButton" value="Login">Login</button>
+            <p class="form__text">
+                <a class="form__link" href="#">Passwort vergessen?</a>
+            </p>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkCreateAccount">Noch kein Account? Hier registrieren!</a>
+            </p>
+        </form>
+        <form onsubmit="createAccount(this)" class="form form--hidden" id="createAccount">
+            <h2 class="form__title">Konto erstellen</h2>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Username" required name="username">
+            </div>
+            <div class="form__input-group">
+                <input type="email" class="form__input" autofocus placeholder="Email Address" required name="email">
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" placeholder="Password" required name="password">
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" placeholder="Confirm Password" required name="confirmPassword">
+            </div>
+            <button class="form__button" type="submit" value="Registrieren">Registrieren</button>
+            <p class="form__text">
+                <a class="form__link" id="linkLogin">Schon registriert? Hier einloggen!</a>
+            </p>
+        </form>
+        
+    </div>
+    <script src="./js/functions.js"></script>
 </body>
 </html>

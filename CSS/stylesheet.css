@@ -1,63 +1,443 @@
-.grid-container{
+/*Allgemeine Variablen und Attribute für das Body-Tag*/
+body{
+    --color-primary: #123858;
+    --color-primary-dark: #002340;
+    --color-primary-light: #2e4f71;
+    --color-secondary: #48678a;
+    --color-success: #32cd32;
+    --color-error: #f52000;
+    --color-focus: #00a579;
+    --color-focus-dark: #007048;
+    --color-main: #373737;
+    --color-cancle: #a5002c;
+    --color-cancle-dark: #690000;
+    --color-border: #303030;
+    --color-text-main: #ffffff;
+    --color-text-main-dark: #e2e2e2;
+    --border-radius: 10px;
+    box-sizing: border-box;
+}
+/*Standard-CSS für Content-Seiten*/
+.body__main{
     display: grid;
     min-height: 100vh;
-    grid-template-columns: minmax(100px, 150px) 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
-    background-color: beige;
+    grid-template-columns: minmax(50px, 150px) minmax(275px, 1fr) 1fr 1fr;
+    grid-template-rows: auto 1fr minmax(37px, 53px);
+    background-color: var(--color-primary);
     margin: 0;
     font-family: sans-serif;
+    font-size: 18px;
 }
-.padding{
-    padding: 1.5rem;
-}
-header{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: rgb(27, 60, 88);
-    color: white;
-    grid-column: span 4;
-}
-nav{
-    background-color: rgb(27, 60, 88);
-}
-aside{
-    background-color: lightseagreen;
-    max-width: 200px;
-    display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(10px, 25px));
-    grid-gap: 1rem;
-}
-main{
-    background-color: brown;
+
+/*CSS für den Main-Bereich der Seite*/
+.mainContainer{
+    box-sizing: border-box;
+    background: transparent;
     grid-column: span 3;
+    display: grid;
+    grid-template-columns: max-content 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr 1fr 1fr 1fr 1fr 1fr;
+    color: var(--color-text-main);
+    min-width: 200px;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.main__grid-item1{
+    grid-column: span 12;
+    grid-row: 1;
+    text-align: center;
+}
+
+.main__grid-item2{
+    grid-column: span 1;
+    grid-row: 2;
+    color: var(--color-text-main);
+}
+
+.main__grid-item3{
+    grid-column: 9/13;
+    grid-row: 2;
+    color: var(--color-text-main);
     
 }
-footer{
-    background-color: darkolivegreen;
-    grid-column: span 4;
-    
+
+.main__grid-item4{
+    grid-column: span 12;
+    grid-row: span 6;
 }
-div.navigator{
-    grid-column: span 3;
-    display:grid;
+
+.main__bday-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
 }
-h2.siteName{
-    margin: 0;
+
+@media (min-width:1020px){
+    .main__bday-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: 1fr;
+    }
+        
+}
+
+@media (min-width:630px) and (max-width:1020px){
+    .main__bday-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: 1fr;
+    }
+        
+}
+
+.main__bday-item{
+    grid-column: span 2;
+    grid-row: span 2;
+    background: var(--color-primary-light);
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: fit-content;
+}
+
+.main__bday-title{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem;
+}
+
+.main__bday-content{
+    margin: 0.5rem;
+}
+
+.span__bday{
+    font-weight: bold;
+}
+
+.dialog__container,
+.form__button--cancle,
+.button__add{
+    font: 500 1rem 'Catamaran', sans-serif;
+}
+
+.dialog__container{
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--color-secondary);
+    box-shadow: 5px 5px 20px #000;
+}
+
+.dialog__container > *:first-child{
+    margin-top: 0;
+}
+
+.dialog__container > *:last-child{
+    margin-bottom: 0;
+}
+
+.dialog__title{
+    color: var(--color-text-main);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.button__dialog{
+    border: none;
+    background: var(--color-primary-light);
+    cursor: pointer;
+    box-shadow: 20 20 rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    height: fit-content;
     padding: 0;
-}
-a.homeLink{
-    text-decoration: none;
-    color: white;
-}
-div.siteName{
+    padding-right: 5px;
+    margin-left: 0.5rem;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
-button.sidebar{
-    min-height: 10px;
-    max-height: 25px;
-    min-width: auto;
+
+.dialog__container::backdrop{
+    background-color: #000;
+    opacity: .2;
+}
+
+.button__dialog:hover{
+    color: var(--color-text-main-dark);
+}
+
+.button__dialog:active{
+    transform: scale(0.98);
+}
+
+.form__button--add{
+    margin-bottom: 1rem;
+}
+
+.button__bday-remove{
+    border: none;
+    background: var(--color-primary-light);
+    cursor: pointer;
+    box-shadow: 20 20 rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+}
+
+/*CSS für Header mit Navi-Bar*/
+.headerContainer{
+    grid-column: span 4;
+    box-shadow: 0 5px 20px #000;
+    background: var(--color-primary-dark);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.navContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo__link{
+    text-decoration: none;
+    color: var(--color-text-main);
+}
+
+.logo__link:hover{
+    color: var(--color-text-main-dark);
+}
+
+.nav__link{
+    text-decoration: none;
+    color: var(--color-text-main);
+}
+
+.nav__link:hover{
+    color: var(--color-text-main-dark);
+}
+
+/*Sidebar für Seiten interne Navigation*/
+.asideContainer{
+    background-color: var(--color-primary-light);
+    display: flex;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 20px #000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow: auto;
+}
+
+.aside__sidebar{
+    padding: 1rem;
+    margin: 0;
+    list-style-type: none;
+}
+
+.aside__list-single{
+    padding-left: 0.5rem;
+    margin: 0;
+    list-style-type: none;
+}
+
+.aside__button{
     background: transparent;
     border: none;
+    font: 700 large 'Catamaran', sans-serif;
+    cursor: pointer;
+    color: var(--color-text-main);
+    margin-bottom: 2px;
+    text-shadow: 1px 1px #000;
+}
+
+.aside__button:hover{
+    color: var(--color-text-main-dark);
+}
+
+.aside__link{
+    background: transparent;
+    border: none;
+    font: 700 large 'Catamaran', sans-serif;
+    cursor: pointer;
+    color: var(--color-text-main);
+    text-decoration: none;
+    text-shadow: 1px 1px #000;
+    margin-bottom: 2px; 
+}
+
+.aside__link:hover{
+    color: var(--color-text-main-dark);
+}
+
+/*Fußzeile*/
+.footerContainer{
+    background-color: var(--color-primary-dark);
+    grid-column: span 4;
+    padding: 1rem;
+}
+
+/*Klassen hauptsächlich für index.html als Login-Seite*/
+@media screen and (min-device-width:960px) {
+        .body__login{
+            background: url(../img/calendar_giant.jpg);
+            background-size: cover;
+        }
+}
+@media screen and (min-device-width:480px) and (max-device-width:960px){
+    .body__login{
+        background: url(../img/calendar_big.jpg);
+        background-size: cover;
+    }
+}
+@media screen and (min-device-width:200px) and (max-device-width:480px){
+    .body__login{
+        background: url(../img/calendar_medium.jpg);
+        background-size: cover;
+    }
+}
+.body__login{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+.loginContainer{
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 15px #000;
+    border: 1px solid #303030;
+    border-radius: var(--border-radius);
+    background: var(--color-primary)
+}
+
+.loginContainer,
+.form__input,
+.form__button{
+    font: 500 1rem 'Catamaran', sans-serif;
+}
+
+.form__title{
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--color-text-main);
+}
+.form > *:first-child{
+    margin-top: 0;
+}
+
+.form > *:last-child{
+    margin-bottom: 0;
+}
+
+.form__message{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form__message--success{
+    color: var(--color-success);
+}
+
+.form__message--error{
+    color: var(--color-error);
+}
+
+.form__input-group{
+    margin-bottom: 1rem;
+}
+
+.form__input{
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 3px solid #dddddd;
+    outline: none;
+    background-color: #eeeeee;
+    transition: background 0.2s; border-color: 0.2s;
+}
+
+.form__input:focus{
+    border-color: var(--color-focus);
+    background: var(--color-text-main);
+}
+
+.form__input--error{
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.form__input-error-message{
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error);
+}
+
+.form__button{
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background-color: var(--color-focus);
+}
+
+.form__button:hover{
+    background: var(--color-focus-dark);
+}
+
+
+.form__button:active{
+    transform: scale(0.98);
+}
+
+.form__button--cancle{
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background-color: var(--color-cancle);
+}
+
+.form__button--cancle:hover{
+    background: var(--color-cancle-dark);
+}
+
+.form__button--cancle:active{
+    transform: scale(0.98);
+}
+
+.form__text{
+    text-align: center;
+}
+
+.form__link{
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.form__link:hover{
+    text-decoration: underline;
+}
+
+.form--hidden{
+    display: none;
 }
